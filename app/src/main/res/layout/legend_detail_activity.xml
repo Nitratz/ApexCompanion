@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/apex_bg_dark"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/legend_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitCenter"
+            android:transitionName="legend"
+            android:layout_gravity="center_horizontal"
+            tools:src="@drawable/legends_wraith"/>
+
+        <TextView
+            android:id="@+id/tv_title_legend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textColor="#FFF"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/nimbus_sans_condensed"
+            tools:text="WRAITH"/>
+    </LinearLayout>
+
+</ScrollView>

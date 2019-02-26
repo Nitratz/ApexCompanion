@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ApexCompanion</string>
+
+    <string name="legends_wraith">WRAITH</string>
+    <string name="legends_bangalore">BANGALORE</string>
+    <string name="legends_bloodhound">BLOODHOUND</string>
+    <string name="legends_lifeline">LIFELINE</string>
+    <string name="legends_pathfinder">PATHFINDER</string>
+    <string name="legends_mirage">MIRAGE</string>
+    <string name="legends_caustic">CAUSTIC</string>
+    <string name="legends_gibraltar">GIBRALTAR</string>
+</resources>
