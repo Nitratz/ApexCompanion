@@ -1,34 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/apex_bg_dark"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="@drawable/apex_bg_dark">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
 
         <ImageView
             android:id="@+id/legend_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
             android:scaleType="fitCenter"
             android:transitionName="legend"
-            android:layout_gravity="center_horizontal"
-            tools:src="@drawable/legends_wraith"/>
+            tools:src="@drawable/legends_wraith" />
 
         <TextView
             android:id="@+id/tv_title_legend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:textColor="#FFF"
-            android:layout_marginTop="8dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nimbus_sans_condensed"
-            tools:text="WRAITH"/>
+            android:textColor="#FFF"
+            android:textSize="46sp"
+            tools:text="WRAITH" />
+
+        <TextView
+            android:id="@+id/tv_desc_legend"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:maxHeight="150dp"
+            android:scrollbars="vertical"
+            android:textColor="#FFF"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            tools:text="Wraith is a whirlwind fighter, able to execute swift and deadly attacks and manipulate spacetime by opening rifts in the fabric of reality — but she has no idea how she got that way. Years ago, she woke up in an IMC Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a distant voice whispering in her mind that would keep her awake for days on end. Despite nearly driving her insane, once she started to listen and trust it, the voice helped her harness her newfound power of void manipulation and escape the facility.\nDetermined to uncover her true identity, Wraith began a quest to find out more about the experiments. Many of the old research facilities, however, are buried beneath heavily guarded arenas used for the Apex Games. Now Wraith has joined the competition, and with every match she gets closer to the truth." />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nimbus_sans_condensed"
+            android:text="@string/abilities"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/colorPrimary" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/hexagon_passive"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hexagon_ability" />
+
+            <ImageView
+                android:id="@+id/iv_passive"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/hexagon_passive"
+                app:layout_constraintEnd_toEndOf="@+id/hexagon_passive"
+                app:layout_constraintStart_toStartOf="@+id/hexagon_passive"
+                app:layout_constraintTop_toTopOf="@+id/hexagon_passive"
+                app:srcCompat="@drawable/ic_voices_from_void" />
+
+
+            <TextView
+                android:id="@+id/tv_passive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/nimbus_sans_black_condensed"
+                android:padding="2dp"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toRightOf="@id/hexagon_passive"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/hexagon_passive"
+                tools:text="Voices from the void" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:padding="2dp"
+                android:text="@string/passive"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/hexagon_passive"
+                app:layout_constraintLeft_toRightOf="@id/hexagon_passive"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/cooldown_passive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#FFF"
+                app:layout_constraintLeft_toLeftOf="@id/hexagon_passive"
+                app:layout_constraintRight_toRightOf="@id/hexagon_passive"
+                app:layout_constraintTop_toBottomOf="@id/hexagon_passive"
+                tools:text="777 sec" />
+
+
+            <TextView
+                android:id="@+id/tv_desc_passive"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:maxHeight="100dp"
+                android:scrollbars="vertical"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cooldown_passive"
+                tools:text="You hear a spectral voice audibly warn you if someone is looking or aiming at you, or if there are traps nearby, such as Caustic's Nox Gas Trap. The specifics of what qualifies as looking at you\ are not currently known, nor is the frequency it will activate. When you hear the voice, you can press h to share the info with your squad mates" />
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/hexagon_tactical"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hexagon_ability" />
+
+            <ImageView
+                android:id="@+id/iv_tactical"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/hexagon_tactical"
+                app:layout_constraintEnd_toEndOf="@+id/hexagon_tactical"
+                app:layout_constraintStart_toStartOf="@+id/hexagon_tactical"
+                app:layout_constraintTop_toTopOf="@+id/hexagon_tactical"
+                app:srcCompat="@drawable/ic_into_the_void" />
+
+
+            <TextView
+                android:id="@+id/tv_tactical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/nimbus_sans_black_condensed"
+                android:padding="2dp"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toRightOf="@id/hexagon_tactical"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/hexagon_tactical"
+                tools:text="Into the Void" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:padding="2dp"
+                android:text="@string/tactical"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/hexagon_tactical"
+                app:layout_constraintLeft_toRightOf="@id/hexagon_tactical"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/cooldown_tactical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#FFF"
+                app:layout_constraintLeft_toLeftOf="@id/hexagon_tactical"
+                app:layout_constraintRight_toRightOf="@id/hexagon_tactical"
+                app:layout_constraintTop_toBottomOf="@id/hexagon_tactical"
+                tools:text="15 sec" />
+
+
+            <TextView
+                android:id="@+id/tv_desc_tactical"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:maxHeight="100dp"
+                android:scrollbars="vertical"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cooldown_tactical"
+                tools:text="You hear a spectral voice audibly warn you if someone is looking or aiming at you, or if there are traps nearby, such as Caustic's Nox Gas Trap. The specifics of what qualifies as looking at you\ are not currently known, nor is the frequency it will activate. When you hear the voice, you can press h to share the info with your squad mates" />
+        </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
 </ScrollView>

@@ -9,4 +9,8 @@
     <string name="legends_mirage">MIRAGE</string>
     <string name="legends_caustic">CAUSTIC</string>
     <string name="legends_gibraltar">GIBRALTAR</string>
+
+    <string name="abilities">Abilities</string>
+    <string name="passive">Passive</string>
+    <string name="tactical">Tactical</string>
 </resources>
