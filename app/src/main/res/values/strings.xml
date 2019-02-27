@@ -13,4 +13,5 @@
     <string name="abilities">Abilities</string>
     <string name="passive">Passive</string>
     <string name="tactical">Tactical</string>
+    <string name="ultimate">Ultimate</string>
 </resources>

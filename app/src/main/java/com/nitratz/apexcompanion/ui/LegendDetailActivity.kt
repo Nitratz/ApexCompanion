@@ -9,15 +9,23 @@ import com.nitratz.apexcompanion.R
 import com.nitratz.apexcompanion.models.Legend
 import android.text.method.ScrollingMovementMethod
 import android.view.MenuItem
-
-
+import android.widget.ScrollView
+import com.bumptech.glide.Glide
 
 
 class LegendDetailActivity : AppCompatActivity() {
 
+    // Legend
     private lateinit var mTvLegendTitle: TextView
     private lateinit var mIvLegendImage: ImageView
     private lateinit var mTvLegendDesc: TextView
+    // Abilities
+    private lateinit var mTvTitleAbilityPassive: TextView
+    private lateinit var mIvAbilityPassive: ImageView
+    private lateinit var mTvTitleAbilityTactical: TextView
+    private lateinit var mIvAbilityTactical: ImageView
+    private lateinit var mTvTitleAbibilityUltimate: TextView
+    private lateinit var mIvAbilityUltimate: ImageView
 
     private lateinit var mLegend: Legend
 
@@ -36,9 +44,13 @@ class LegendDetailActivity : AppCompatActivity() {
         mIvLegendImage = findViewById(R.id.legend_image)
         mTvLegendTitle = findViewById(R.id.tv_title_legend)
         mTvLegendDesc = findViewById(R.id.tv_desc_legend)
+        mTvTitleAbilityPassive = findViewById(R.id.tv_passive)
+        mTvTitleAbilityTactical = findViewById(R.id.tv_tactical)
+        mTvTitleAbibilityUltimate = findViewById(R.id.tv_ultimate)
 
         mTvLegendDesc.movementMethod = ScrollingMovementMethod()
 
+        setupScrollingMethod()
         mTvLegendTitle.text = mLegend.mName
         mTvLegendDesc.text = mLegend.mDescription
         setImageByLegendId()
@@ -46,14 +58,26 @@ class LegendDetailActivity : AppCompatActivity() {
 
     private fun setImageByLegendId() {
         when (mLegend.mId) {
-            0 -> mIvLegendImage.setImageResource(R.drawable.legends_wraith)
-            1 -> mIvLegendImage.setImageResource(R.drawable.legends_bangalore)
-            2 -> mIvLegendImage.setImageResource(R.drawable.legends_bloodhound)
-            3 -> mIvLegendImage.setImageResource(R.drawable.legends_lifeline)
-            4 -> mIvLegendImage.setImageResource(R.drawable.legends_gibraltar)
-            5 -> mIvLegendImage.setImageResource(R.drawable.legends_pathfinder)
-            6 -> mIvLegendImage.setImageResource(R.drawable.legends_mirage)
-            7 -> mIvLegendImage.setImageResource(R.drawable.legends_caustic)
+            0 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
+            1 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_bangalore.png?alt=media").into(mIvLegendImage)
+            2 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_bloodhound.png?alt=media").into(mIvLegendImage)
+            3 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
+            4 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
+            5 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
+            6 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
+            7 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
+        }
+    }
+
+    private fun setupScrollingMethod() {
+        findViewById<ScrollView>(R.id.scroll_container).setOnTouchListener{_, _ ->
+            mTvLegendDesc.parent.requestDisallowInterceptTouchEvent(false)
+            false
+
+        }
+        mTvLegendDesc.setOnTouchListener{_, _ ->
+            mTvLegendDesc.parent.requestDisallowInterceptTouchEvent(true)
+            false
         }
     }
 

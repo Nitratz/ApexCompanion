@@ -1,33 +1,33 @@
 [
   {
-  "id": 0,
-  "name": "Wraith",
-  "description": "Wraith is a whirlwind fighter, able to execute swift and deadly attacks and manipulate spacetime by opening rifts in the fabric of reality — but she has no idea how she got that way. Years ago, she woke up in an IMC Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a distant voice whispering in her mind that would keep her awake for days on end. Despite nearly driving her insane, once she started to listen and trust it, the voice helped her harness her newfound power of void manipulation and escape the facility.\nDetermined to uncover her true identity, Wraith began a quest to find out more about the experiments. Many of the old research facilities, however, are buried beneath heavily guarded arenas used for the Apex Games. Now Wraith has joined the competition, and with every match she gets closer to the truth.",
-  "ability_0" : {
-    "name": "Voices from the Void",
-    "type": "Passive",
-    "cooldown": 0,
-    "description": "You hear a spectral voice audibly \"warn\" you if someone is looking or aiming at you, or if there are traps nearby, such as Caustic's Nox Gas Trap. The specifics of what qualifies as \"looking at you\" are not currently known, nor is the frequency it will activate. When you hear the voice, you can press h to share the info with your squad mates."
+    "id": 0,
+    "name": "Wraith",
+    "image_url": "",
+    "description": "Wraith is a whirlwind fighter, able to execute swift and deadly attacks and manipulate spacetime by opening rifts in the fabric of reality — but she has no idea how she got that way. Years ago, she woke up in an IMC Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a distant voice whispering in her mind that would keep her awake for days on end. Despite nearly driving her insane, once she started to listen and trust it, the voice helped her harness her newfound power of void manipulation and escape the facility.\nDetermined to uncover her true identity, Wraith began a quest to find out more about the experiments. Many of the old research facilities, however, are buried beneath heavily guarded arenas used for the Apex Games. Now Wraith has joined the competition, and with every match she gets closer to the truth.",
+    "ability_0": {
+      "name": "Voices from the Void",
+      "type": "Passive",
+      "cooldown": 0,
+      "description": "You hear a spectral voice audibly \"warn\" you if someone is looking or aiming at you, or if there are traps nearby, such as Caustic's Nox Gas Trap. The specifics of what qualifies as \"looking at you\" are not currently known, nor is the frequency it will activate. When you hear the voice, you can press h to share the info with your squad mates."
+    },
+    "ability_1": {
+      "name": "Into the Void",
+      "type": "Tactical",
+      "cooldown": 15,
+      "description": "Upon activation, you enter the void. While in the void, everything looks gray to you, you are invulnerable, and you become invisible. However, you leave a bright purple trail in your path. In addition, you can not see other players for the duration.\nYou still follow the normal rules of movement, such as climbing up obstacles and sprinting, although you are unable to open closed doors, nor can you collect ally's beacons."
+    },
+    "ability_2": {
+      "name": "Dimensional Rift",
+      "type": "Ultimate",
+      "cooldown": 150,
+      "description": "Upon activation, you will place a starting portal and then move faster for the duration, setting the path of the portals and leaving a faint trail that disappears afterward placing both portals. When someone steps into either portal, they will rapidly follow this same path, being invisible and invulnerable along the way.\nRecharging time is 2 minutes 30 seconds after placing the exit portal.\nThe portal can be used by both allies and enemies, and can be used in quick succession. It is multi-directional, and transports travelers roughly 5x the speed traveled to place the portal. Players can use the portal even when they are knocked down.\nWraith can not use weapons or ziplines, but can use her tactical ability while setting the portal path."
+    }
   },
-  "ability_1": {
-    "name": "Into the Void",
-    "type": "Tactical",
-    "cooldown": 15,
-    "description": "Upon activation, you enter the void. While in the void, everything looks gray to you, you are invulnerable, and you become invisible. However, you leave a bright purple trail in your path. In addition, you can not see other players for the duration.\nYou still follow the normal rules of movement, such as climbing up obstacles and sprinting, although you are unable to open closed doors, nor can you collect ally's beacons."
-  },
-  "ability_2": {
-    "name": "Dimensional Rift",
-    "type": "Ultimate",
-    "cooldown": 150,
-    "description": "Upon activation, you will place a starting portal and then move faster for the duration, setting the path of the portals and leaving a faint trail that disappears afterward placing both portals. When someone steps into either portal, they will rapidly follow this same path, being invisible and invulnerable along the way.\nRecharging time is 2 minutes 30 seconds after placing the exit portal.\nThe portal can be used by both allies and enemies, and can be used in quick succession. It is multi-directional, and transports travelers roughly 5x the speed traveled to place the portal. Players can use the portal even when they are knocked down.\nWraith can not use weapons or ziplines, but can use her tactical ability while setting the portal path."
-  }
-},
-
   {
     "id": 1,
     "name": "Bangalore",
     "description": "Born into a military family where she, her parents, and her four older brothers all served in the IMC Armed Forces, 40138416 callsign Bangalore has been an exceptional soldier since she was young. She was top of her class at the IMC Military Academy and the only cadet who could take apart a Peacekeeper, equip it with a Precision Choke hop-up, and put it back together in under twenty seconds – blindfolded.\nThree years ago, Anita and her brother Jackson were ordered to retrieve a mercenary fleet from the Outlands to aid in the IMC's fight against the Militia. However, their unit lost contact with IMC HQ and were ambushed on arrival. The squad scattered, but Jackson stayed behind to give his sister time to escape. Alone and with no way home, Anita put her training, extensive weapon knowledge, and competitive spirit to work by joining the Apex Games. Now, she fights to raise money for passage back to the IMC home base, where she hopes to reunite with what remains of her family.",
-    "ability_0" : {
+    "ability_0": {
       "name": "Double Time",
       "type": "Passive",
       "cooldown": 0,
@@ -46,12 +46,11 @@
       "description": "Rolling Thunder should be best saved for large team engagements or ambushes, or ultimately to cover your team while escaping. It can catch an unsuspecting enemy team off guard and have them running for cover.\nThis ultimate ability isn't independently powerful enough to be fully effective on its own, so it is strongly recommended to chase the enemy down as they get bombarded. However be careful, Rolling Thunder will hurt you and your teammates and can kill any knocked down teammates in its area."
     }
   },
-
   {
     "id": 2,
     "name": "Bloodhound",
     "description": "Bloodhound is known across the Outlands as one of the greatest game hunters the Frontier has ever seen – and that's about all anyone knows. Their identity is a mystery wrapped in layers of rumors: they are fabulously wealthy, a bloodthirsty murderer, a Goliath whisperer, a former slave, half bat, and a dozen other things depending on who's doing the whispering.\nAll anyone truly knows is that Bloodhound is a force to be reckoned with in the Apex Games. Bloodhound's unparalleled tracking skills are a boon to any team they join, helping them root out hidden opponents and tracking the enemy's movements. Calling on Earth's Old Norse Gods to guide them, Bloodhound believes that destiny is a path that has already been laid out, eventually carrying all to their death. But with that knowledge comes strength, because until that day comes, Bloodhound knows they can't be stopped.",
-    "ability_0" : {
+    "ability_0": {
       "name": "Tracker",
       "type": "Passive",
       "cooldown": 0,
@@ -70,12 +69,11 @@
       "description": "While active, you can see enemies through Bangalore's or Caustic smokes.\nSince footsteps are tracked, Beast of the Hunt is a great way of finishing off a weakened enemy or finding an hiding foe.\nSince enemies are highlighted in all red, it's much easier to see them from long to extreme range. This makes Beast of the Hunt a great scouting and sniping skill.\nSeeing in black and white only can be troublesome concerning stuff on the ground or enemies' shields, which you cannot see the color (and so, the level)."
     }
   },
-
   {
     "id": 3,
     "name": "Lifeline",
     "description": "Ajay Che, AKA Lifeline, isn't someone you would expect to find in the Apex Games. Once the child of wealthy war profiteers, she left home when she learned of the damage her family had caused and enlisted in the Frontier Corps, a humanitarian organization that aids Frontier communities in need. She's since devoted her life to helping others and joined the Apex Games to fund the Frontier Corps with her winnings.\nSince no one in the Games is innocent — they all know what they signed up for — and every one of her victories means help for those in need, Lifeline has no problem engaging in the popular bloodsport. Or so she tells herself. She may seem sarcastic and callous, but deep down she wants to help people and make the world a better place. If that means taking a few people down in the process, so be it.",
-    "ability_0" : {
+    "ability_0": {
       "name": "Combat Medic",
       "type": "Passive",
       "cooldown": 0,
@@ -94,12 +92,11 @@
       "description": "Between the 3 slots, one is reserved to healing items (Shield Cell/Batteries, Syringe/Medkit, Phoenix Kit), one for a gear (Body Shield, Helmet, Knockdown Shield) and the last contains a weapon mod.\nWhile not as flashy as some other legend's ultimates, the high chance of getting level 3 armor (purple) is worth its weight in gold especially if your squad hasn't had the good fortune to get anything above level 1 armor, as well as supplying Shield Cells and Medkits if they have been depleted after a particularly grueling fight.\nCan be used as cover in an area with low cover, or as a stepping stone in order to climb up to greater heights.\nLifeline's team should prioritize giving her most if not all of the Ultimate Accelerants they find, at least in the early-mid game.\nLifeline care packages are very obvious and can thus compromise your team's exact position. Be on guard when using it, as nearby enemies may decide to come running.\nThis issue is exacerbated in the very late-game with 2-3 squads remaining, where a small circle makes getting ambushed that much more likely.\nConversely, this can be used to Lifeline's advantage, as bait: Lifeline could use the package away from her team to mislead enemies, or in a spot where her team can watch the care package and ambush see who comes."
     }
   },
-
   {
     "id": 4,
     "name": "Gibraltar",
     "description": "Gibraltar is a gentle giant with a wild side. The son of two SARAS (Search and Rescue Association of Solace) volunteers, he has always been skilled at getting others out of dangerous situations that are common in the Outlands. However, he only began to understand the value of protecting others when he and his boyfriend stole his father's motorcycle, took it on a joyride, and got trapped by a deadly mudslide. His parents saved them, and his father lost an arm in the process. Gibraltar has never forgotten that sacrifice and has devoted his life to helping those in need.\nThe Apex Games didn't change that, but they changed what it meant. Many of Gibraltar's friends and colleagues have competed in the Games for extra money, fame, and glory over the years, and some never came home. Gibraltar joined to keep them safe and, for the first time, his skills as a rescuer and his rebellious nature worked together. He's now become an icon in the Apex Games, putting himself in the line of fire to protect his squad and send his opponents running for cover.",
-    "ability_0" : {
+    "ability_0": {
       "name": "Gun Shield",
       "type": "Passive",
       "cooldown": 0,
