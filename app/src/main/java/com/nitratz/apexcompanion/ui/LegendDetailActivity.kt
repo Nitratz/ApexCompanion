@@ -1,5 +1,6 @@
 package com.nitratz.apexcompanion.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
@@ -21,11 +22,14 @@ class LegendDetailActivity : AppCompatActivity() {
     private lateinit var mTvLegendDesc: TextView
     // Abilities
     private lateinit var mTvTitleAbilityPassive: TextView
-    private lateinit var mIvAbilityPassive: ImageView
     private lateinit var mTvTitleAbilityTactical: TextView
+    private lateinit var mTvTitleAbilityUltimate: TextView
+    private lateinit var mIvAbilityPassive: ImageView
     private lateinit var mIvAbilityTactical: ImageView
-    private lateinit var mTvTitleAbibilityUltimate: TextView
     private lateinit var mIvAbilityUltimate: ImageView
+    private lateinit var mTvDescPassive: TextView
+    private lateinit var mTvDescTactical: TextView
+    private lateinit var mTvDescUltimate: TextView
 
     private lateinit var mLegend: Legend
 
@@ -41,42 +45,57 @@ class LegendDetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = mLegend.mName
 
+        bindViews()
+        attachDataToViews()
+    }
+
+    private fun bindViews() {
         mIvLegendImage = findViewById(R.id.legend_image)
         mTvLegendTitle = findViewById(R.id.tv_title_legend)
         mTvLegendDesc = findViewById(R.id.tv_desc_legend)
         mTvTitleAbilityPassive = findViewById(R.id.tv_passive)
         mTvTitleAbilityTactical = findViewById(R.id.tv_tactical)
-        mTvTitleAbibilityUltimate = findViewById(R.id.tv_ultimate)
+        mTvTitleAbilityUltimate = findViewById(R.id.tv_ultimate)
+        mIvAbilityPassive = findViewById(R.id.iv_passive)
+        mIvAbilityTactical = findViewById(R.id.iv_tactical)
+        mIvAbilityUltimate = findViewById(R.id.iv_ultimate)
+        mTvDescPassive = findViewById(R.id.tv_desc_passive)
+        mTvDescTactical = findViewById(R.id.tv_desc_tactical)
+        mTvDescUltimate = findViewById(R.id.tv_desc_ultimate)
+    }
 
-        mTvLegendDesc.movementMethod = ScrollingMovementMethod()
-
-        setupScrollingMethod()
+    private fun attachDataToViews() {
         mTvLegendTitle.text = mLegend.mName
         mTvLegendDesc.text = mLegend.mDescription
-        setImageByLegendId()
+        setupScrollingMethod(mTvLegendDesc)
+        Glide.with(this).load(mLegend.mImageUrl).into(mIvLegendImage)
+
+        mTvTitleAbilityPassive.text = mLegend.mPassive.mName
+        mTvTitleAbilityTactical.text = mLegend.mTactical.mName
+        mTvTitleAbilityUltimate.text = mLegend.mUltimate.mName
+
+        mTvDescPassive.text = mLegend.mPassive.mDescription
+        mTvDescTactical.text = mLegend.mTactical.mDescription
+        mTvDescUltimate.text = mLegend.mUltimate.mDescription
+        setupScrollingMethod(mTvDescPassive)
+        setupScrollingMethod(mTvDescTactical)
+        setupScrollingMethod(mTvDescUltimate)
+
+        Glide.with(this).load(mLegend.mPassive.mImageUrl).into(mIvAbilityPassive)
+        Glide.with(this).load(mLegend.mTactical.mImageUrl).into(mIvAbilityTactical)
+        Glide.with(this).load(mLegend.mUltimate.mImageUrl).into(mIvAbilityUltimate)
     }
 
-    private fun setImageByLegendId() {
-        when (mLegend.mId) {
-            0 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
-            1 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_bangalore.png?alt=media").into(mIvLegendImage)
-            2 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_bloodhound.png?alt=media").into(mIvLegendImage)
-            3 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
-            4 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
-            5 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
-            6 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
-            7 -> Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/apexcompanion-ddc07.appspot.com/o/legends%2Flegends_wraith.png?alt=media").into(mIvLegendImage)
-        }
-    }
-
-    private fun setupScrollingMethod() {
+    @SuppressLint("ClickableViewAccessibility")
+    private fun setupScrollingMethod(tv: TextView) {
+        tv.movementMethod = ScrollingMovementMethod()
         findViewById<ScrollView>(R.id.scroll_container).setOnTouchListener{_, _ ->
-            mTvLegendDesc.parent.requestDisallowInterceptTouchEvent(false)
+            tv.parent.requestDisallowInterceptTouchEvent(false)
             false
 
         }
-        mTvLegendDesc.setOnTouchListener{_, _ ->
-            mTvLegendDesc.parent.requestDisallowInterceptTouchEvent(true)
+        tv.setOnTouchListener{_, _ ->
+            tv.parent.requestDisallowInterceptTouchEvent(true)
             false
         }
     }

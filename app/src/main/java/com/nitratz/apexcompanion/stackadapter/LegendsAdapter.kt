@@ -12,6 +12,7 @@ import android.widget.TextView
 import com.nitratz.apexcompanion.ui.LegendDetailActivity
 import com.nitratz.apexcompanion.ui.MainActivity
 import android.support.v4.app.ActivityOptionsCompat
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.nitratz.apexcompanion.R
 import com.nitratz.apexcompanion.models.Legend
@@ -30,19 +31,17 @@ class LegendsAdapter(private val mContext: Context) : PagerAdapter() {
     }
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
-        val legendEnum = LegendsEnum.values()[position]
+        val legend = mLegends[position]
         val inflater = LayoutInflater.from(mContext)
         val layout = inflater.inflate(R.layout.item_legend, collection, false) as ViewGroup
-        layout.run {
-            findViewById<TextView>(R.id.tv_title_legend).text = mContext.getString(legendEnum.mLegendName)
-            findViewById<ImageView>(R.id.bg_legend).setImageResource(legendEnum.mLegendImage)
-        }
 
+        layout.findViewById<TextView>(R.id.tv_title_legend).text = legend.mName
+        Glide.with(mContext).load(legend.mImageUrl).into(layout.findViewById<ImageView>(R.id.bg_legend))
         layout.setOnClickListener{
             val intent = Intent((mContext as MainActivity), LegendDetailActivity::class.java)
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext as Activity, layout.findViewById<View>(R.id.bg_legend), "legend")
 
-            intent.putExtra(LegendDetailActivity.LEGEND_OBJECT, mLegends[legendEnum.mLegendId])
+            intent.putExtra(LegendDetailActivity.LEGEND_OBJECT, legend)
             mContext.startActivity(intent, options.toBundle())
         }
 
@@ -54,18 +53,11 @@ class LegendsAdapter(private val mContext: Context) : PagerAdapter() {
         collection.removeView(view as View)
     }
 
-    override fun getCount(): Int {
-        return LegendsEnum.values().size
-    }
+    override fun getCount(): Int = mLegends.size
 
-    override fun isViewFromObject(view: View, obj: Any): Boolean {
-        return view === obj
-    }
+    override fun isViewFromObject(view: View, obj: Any): Boolean = view === obj
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        val customPagerEnum = LegendsEnum.values()[position]
-        return mContext.getString(customPagerEnum.mLegendName)
-    }
+    override fun getPageTitle(position: Int): CharSequence? = mLegends[position].mName
 
 
 
