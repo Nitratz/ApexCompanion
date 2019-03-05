@@ -27,6 +27,9 @@ class LegendDetailActivity : AppCompatActivity() {
     private lateinit var mIvAbilityPassive: ImageView
     private lateinit var mIvAbilityTactical: ImageView
     private lateinit var mIvAbilityUltimate: ImageView
+    private lateinit var mTvCooldoownPassive: TextView
+    private lateinit var mTvCooldoownTactical: TextView
+    private lateinit var mTvCooldoownUltimate: TextView
     private lateinit var mTvDescPassive: TextView
     private lateinit var mTvDescTactical: TextView
     private lateinit var mTvDescUltimate: TextView
@@ -59,6 +62,9 @@ class LegendDetailActivity : AppCompatActivity() {
         mIvAbilityPassive = findViewById(R.id.iv_passive)
         mIvAbilityTactical = findViewById(R.id.iv_tactical)
         mIvAbilityUltimate = findViewById(R.id.iv_ultimate)
+        mTvCooldoownPassive = findViewById(R.id.cooldown_passive)
+        mTvCooldoownTactical = findViewById(R.id.cooldown_tactical)
+        mTvCooldoownUltimate = findViewById(R.id.cooldown_ultimate)
         mTvDescPassive = findViewById(R.id.tv_desc_passive)
         mTvDescTactical = findViewById(R.id.tv_desc_tactical)
         mTvDescUltimate = findViewById(R.id.tv_desc_ultimate)
@@ -73,6 +79,10 @@ class LegendDetailActivity : AppCompatActivity() {
         mTvTitleAbilityPassive.text = mLegend.mPassive.mName
         mTvTitleAbilityTactical.text = mLegend.mTactical.mName
         mTvTitleAbilityUltimate.text = mLegend.mUltimate.mName
+
+        mTvCooldoownPassive.text = "${mLegend.mPassive.mCooldown} sec"
+        mTvCooldoownTactical.text = "${mLegend.mTactical.mCooldown} sec"
+        mTvCooldoownUltimate.text = "${mLegend.mUltimate.mCooldown} sec"
 
         mTvDescPassive.text = mLegend.mPassive.mDescription
         mTvDescTactical.text = mLegend.mTactical.mDescription
